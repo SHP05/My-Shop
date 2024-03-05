@@ -1,0 +1,23 @@
+.footer{
+    background-color: black;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(212, 212, 212);
+    font-family: 'Abel', sans-serif;  
+  }
+
+  #icon{
+    display: flex;
+    justify-content: center; 
+    margin: 10px;
+  }
+  #icon i{
+    margin: 10px;
+  }
+  #icon i:hover{
+    opacity: 0.6;
+    /* box-shadow: 0px 0px 20px 10px gray; */
+    transition-duration: 1s;
+  }

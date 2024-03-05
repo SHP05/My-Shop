@@ -1,0 +1,7 @@
+.container-err{
+    display: grid;
+    height: 100vh;
+    /* align-items: center;
+    justify-content: center; */
+    place-items: center;
+}

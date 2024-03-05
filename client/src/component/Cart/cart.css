@@ -1,0 +1,54 @@
+body{
+    background-color: white;
+    height: 100vh;
+}
+.cartCards{
+    display: flex;
+    /* background-color: rgba(150, 148, 148, 0.5); */
+    background-color:#c8d8e4;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px 5px rgba(230, 230, 250, 1);
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px 20px ;
+    height: 150px;
+    width: 70%;
+    color: #2b6777;
+    margin-top: 30px;
+}
+.cartCards img{
+    height: 100px;
+    width: 10%;
+    border-radius: 10px;
+}
+.cartCards span{
+    display: flex;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(9, 9, 9,0.2);
+    color: #2b6777;
+}
+.cartCards h5{
+    color: #2b6777;
+}
+.cartCards span .icon{
+    box-shadow: none;
+    width: 30px;
+}
+.totallist{
+    width: 30%;
+}
+.totalCards{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #ccc;
+    padding: 1%;
+}
+.totalCards h5{
+    border-bottom: 1px solid black;
+}
+.totallist{
+    width: 70%;
+}
