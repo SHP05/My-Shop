@@ -34,6 +34,7 @@ Welcome to my Ecommerce WebApp repository! This project is a full-stack applicat
 
   ```bash
   npm install
+
 4. Set up environment variables:
 
   Create a .env file in the root directory.
