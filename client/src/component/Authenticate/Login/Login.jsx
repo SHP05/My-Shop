@@ -62,22 +62,20 @@ const LoginPg = () => {
     const [password, setpassword] = useState('')
     const navigate = useNavigate()
 
-    const submitHandeler = (event) => {
+    const submitHandeler = async (event) => {
         event.preventDefault()
-        axios.post("http://localhost:3001/login", { email, password })
+         await axios.post("http://localhost:3001/login", { email, password })
             .then(result => {
-                // console.log(result) //show login user data for test
-                if (result.data.user.email === email) {
-                    localStorage.setItem("name", result.data.user.name)
-                    localStorage.setItem("email", result.data.user.email)
+                console.log(result) //show login user data for test
+                    localStorage.setItem("name", result.data.userData.name);
+                    localStorage.setItem("email", result.data.userData.token)
+                    console.log(result.data.token);
                     navigate("/home")
-                }
             })
             .catch(err => {
               console.log("User Not Found")
               notify()
-          })
-            
+          })     
     }
     return (
         <>

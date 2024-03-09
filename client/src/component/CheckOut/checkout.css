@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Ysabeau+Office&display=swap');
+
+  .container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
   /* Buuton of check out */
     .button-36 {
       background-color:#2b6777;
@@ -34,9 +40,9 @@
 /* Contact us */
 .contact form{
   border: 3px solid gray;
-  /* border-radius: 5px; */
   padding: 30px;
  }
  .contact{
   background-color: rgba(238, 238, 238, 238);
  }
+ 

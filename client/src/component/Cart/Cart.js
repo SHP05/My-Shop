@@ -19,20 +19,21 @@ const Cart = () => {
     }
     
     //increment or decrement
-    const disspach = useDispatch();
     const addProduct = (product) =>{
-        disspach(addCart(product));
+        dispatch(addCart(product));
     }
     const delProduct = (product) =>{
         dispatch(delCart(product));
     }
+
     const cartItems = (cartItem) => {
         return(
             <>
             <div className="cartCard my-5">
             {
-                //  state1.map(p => 
-                 <div className="cartCards mx-auto">
+                 <div className="cartCards mx-auto"  data-aos="fade-up"
+                 data-aos-anchor-placement="bottom-bottom"
+                 data-aos-duration="1000">
                      <img src={cartItem.image} alt={cartItem.title} />
                      <h3>{cartItem.title.substring(0,25)}...</h3>
                      <h5>{cartItem.price}</h5>
@@ -47,7 +48,6 @@ const Cart = () => {
                      </span>
                      <button onClick={()=>handleClose(cartItem)} className="btn-close float-end" aria-label="Close"></button>
                  </div>
-                //  )
              }
             </div>
          </>
@@ -58,8 +58,9 @@ const Cart = () => {
         return (
             <div className="px-4 my-5 rounded-3 py-5">
                 <div className="container py-4">
-                    <div className="row d-flex-center">
+                    <div className="row d-flex-center justify-content-center align-content-center">
                         <h3>Your Cart is Empty</h3>
+                        <img src="/assets/emptycart.webp" className='' style={{height:"300px", width:"300px"}}/>
                     </div>
                     </div>
                 </div>

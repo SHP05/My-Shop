@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.1",
@@ -38,7 +39,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev":"react-scripts start"
+    "dev": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [

@@ -65,7 +65,7 @@ const HomeProducts = () => {
                     return (
                         <>
                             <div className="card-wrapper">
-                                <div className="cards">
+                                <div className="cards" data-aos="flip-up" data-aos-duration="1000">
                                     <div className="image-wrapper">
                                         <img src={product.image} alt="product" />
                                     </div>

@@ -1,7 +1,10 @@
 .container-err{
+    background-image: url(./error.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.error-text{
     display: grid;
     height: 100vh;
-    /* align-items: center;
-    justify-content: center; */
-    place-items: center;
+    place-items: top;
 }
