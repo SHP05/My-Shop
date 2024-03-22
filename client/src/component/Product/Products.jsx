@@ -3,6 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "./product.css";
 import Footer from "../Footer/Footer";
+import ProductSearch from "./Filter";
 import Navbar from "../Navbar/NavbarNew/NavbarResp";
 
 const Products = () => {
@@ -28,14 +29,12 @@ const Products = () => {
         setFilter(updatedData);
     }
 
-    const handleSearch = (event) => {
-        const searchQuery = event.target.value;
-        event.preventDefault();
-        setQuery(searchQuery);
+    const handleSearch = () => {
+  
         const filteredProducts = data.filter(
             (product) =>
-                product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                product.category.toLowerCase().includes(searchQuery.toLowerCase())
+                product.title.toLowerCase().includes(query.toLowerCase()) ||
+                product.category.toLowerCase().includes(query.toLowerCase())
         );
         setFilter(filteredProducts);
     };
@@ -65,53 +64,21 @@ const Products = () => {
             <>
                 {/* Product Navigation */}
                 <div className="product-nav-container">
-                    <div className="buttons d-wrap gap-5 justify-content-evenly mb-5 pb-5">
-                        <button className="button-28 me-2 mx-4" onClick={() => setFilter(data)}>All</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("men's clothing")}>Man's Cloth</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("women's clothing")}>Women's cloth</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("jewelery")}>Jewelery</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("electronics")}>Electronics</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("electronics")}>Shoes</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("electronics")}>T-Shirst</button>
-                        <button className="button-28 me-2 mx-4" onClick={() => filterProducts("electronics")}>Mobile</button>
-                        <input
-                        type="text"
-                        className="input mx-5"
-                        placeholder="Search products"
-                        value={query}
-                        onChange={handleSearch}
-                    />
+                    <div className="buttons d-wrap gap-5 justify-content-evenly mb-2 pb-5">
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => setFilter(data)}>All</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("men's clothing")}>Man's Cloth</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("women's clothing")}>Women's cloth</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("jewelery")}>Jewelery</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Electronics</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Shoes</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>T-Shirst</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Mobile</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>MacBook</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Laptop</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Pendrive</button>
+                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>School Bag</button>
                     </div>
-                    {/* Search Bar */}
-                   
-                </div>
-                {/* Product Cards */}
-                <div className="main-container">
-                    {filters.map((product) => (
-                        <div className="card-wrapper" key={product.id}>
-                            <div className="cards">
-                                <div className="image-wrapper">
-                                    <img src={product.image} alt={product.title} />
-                                </div>
-                                <div className="content-wrapper">
-                                    <div className="title">
-                                        <h4>{product.title.substring(0, 20)}...</h4>
-                                    </div>
-                                    <div className="price">
-                                        ${product.price}
-                                    </div>
-                                    <div className="actions">
-                                        <NavLink to={`/products/${product.id}`}>
-                                            <button id="cart" className="button flip green-solid cart">
-                                                <span className="front">Buy Now</span>
-                                                <span className="backside">Added</span>
-                                            </button>
-                                        </NavLink>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                    <ProductSearch products={filters} />
                 </div>
             </>
         );

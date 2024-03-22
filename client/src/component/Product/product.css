@@ -193,21 +193,13 @@ h4 {
   pointer-events: none;
 }
 
-.input {
-  width: 200px;
-  height: 45px;
-  border: none;
+#search-input{
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
   outline: none;
-  padding: 0px 7px;
-  border-radius: 6px;
-  color: black;
-  font-size: 15px;
-  background-color: white;
-}
-
-.input:focus {
-  border: 2px solid transparent;
-  color: #000;
+  border: none;
+  margin-bottom: 50px;
 }
 
 .serch-container .input:valid ~ .label,

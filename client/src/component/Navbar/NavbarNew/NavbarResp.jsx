@@ -92,7 +92,7 @@ const Navbar = () => {
           <li>
 
             <NavLink to="/cart" className="underline">
-              <span><i class="fa-solid fa-cart-shopping"></i> {state.length}</span>
+              <span><i className="fa-solid fa-cart-shopping"></i> {state.length}</span>
             </NavLink>
 
           </li>
@@ -146,12 +146,8 @@ const Navbar = () => {
               transformOrigin={{ horizontal: 'right', vertical: 'top' }}
               anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-              <MenuItem onClick={handleClose}>
-                <Avatar /> {localStorage.getItem('name')}
-              </MenuItem>
-              <MenuItem onClick={handleClose}>
-                {localStorage.getItem('email')}
-              </MenuItem>
+              <MenuItem>Email</MenuItem>
+              <MenuItem>{localStorage.getItem('email')}</MenuItem>
               <Divider />
               <NavLink to="/" onClick={signoutHandler}>
                 <MenuItem onClick={signoutHandler} >

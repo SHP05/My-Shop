@@ -22,7 +22,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 200);
+    }, 1000);
     window.scrollTo(0,0);
   }, [pathname]);
 

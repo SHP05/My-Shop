@@ -1,4 +1,4 @@
-# Ecommerce WebApp
+# MY SHOP Ecommerce WebApp
 
 Welcome to my Ecommerce WebApp repository! This project is a full-stack application built using React.js, Redux, Node.js, Express.js, and MongoDB. It features JWT Authentication, a complete purchase flow, adding items to the cart functionality using Redux, and sending emails with a bill upon placing an order.
 
@@ -32,23 +32,25 @@ Welcome to my Ecommerce WebApp repository! This project is a full-stack applicat
    cd ecommerce-webapp
 3. Install dependencies:
 
-  ```bash
-  npm install
-
+    ```bash
+    npm install
+    ```
 4. Set up environment variables:
 
-  Create a .env file in the root directory.
-  Add necessary environment variables such as database connection URI, JWT secret, and email service credentials.
-5. Start the server:
+    Create a .env file in the root directory.
+    Add necessary environment variables such as database connection URI, JWT secret, and email service credentials.
+6. Start the server:
 
-  ```bash
-  npm start
-6. Start the frontend:
+    ```bash
+    npm start
 
-  ```bash
-  cd client
-  npm start
-7. Visit http://localhost:3000 in your browser to view the application.
+7. Start the frontend:
+
+    ```bash
+    cd client
+    npm start
+    ```
+8. Visit http://localhost:3000 in your browser to view the application.
 
 ## Usage
   - Register or login to your account.
@@ -60,5 +62,3 @@ Welcome to my Ecommerce WebApp repository! This project is a full-stack applicat
 Contributions are welcome! Feel free to open an issue or submit a pull request. This project is now Under build so contribute and add your thoughts.
 
 Thank you for checking out my Ecommerce WebApp! If you have any questions or suggestions, feel free to contact me. Happy shopping!
-    ```bash
-    You can copy and paste this content into your README.md file on GitHub. Adjust the URLs, file paths, and any other details specific to your project as needed.

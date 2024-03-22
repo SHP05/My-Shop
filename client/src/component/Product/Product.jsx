@@ -17,7 +17,7 @@ const Product = () => {
     const [loading, setLoading] = useState(false);
 
     //toastify
-    const notify = () => toast.success("! Product Added!",
+    const notify = () => toast.success("Product Added Successfully!",
         {
             position: "bottom-right",
             autoClose: 1000,
@@ -41,7 +41,6 @@ const Product = () => {
 
     useEffect(() => {
         const getProducts = async () => {
-            // setLoading(true);
             const response = await fetch(`https://fakestoreapi.com/products/${id}`);
             setProduct(await response.json());
             setLoading(true);
@@ -71,10 +70,10 @@ const Product = () => {
     const ShowProduct = () => {
         return (
             <>
-                <div className="col-md-6 prod-img">
+                <div className="col-md-6 prod-img" key="">
                     <img src={product.image} alt={product.title} height={350} width={350} style={{ "border-radius": "10px" }} />
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6" key="">
                     <h4 className=" text-uppercase text-black-50">
                         {product.category}
                     </h4>

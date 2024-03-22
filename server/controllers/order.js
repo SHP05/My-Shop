@@ -41,7 +41,7 @@ const SendMailOnOrder =  (req, res) => {
       Order Mail
       MyShop.com
       [Website URL]
-      [Contact Information]`
+      @myshop`
   };
 
   transporter.sendMail(mailOptions, function (error, info) {

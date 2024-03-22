@@ -68,7 +68,7 @@ const LoginPg = () => {
             .then(result => {
                 console.log(result) //show login user data for test
                     localStorage.setItem("name", result.data.userData.name);
-                    localStorage.setItem("email", result.data.userData.token)
+                    localStorage.setItem("email", result.data.userData.email)
                     console.log(result.data.token);
                     navigate("/home")
             })

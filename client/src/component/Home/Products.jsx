@@ -18,8 +18,6 @@ const HomeProducts = () => {
             setFilter(await response.json());
             setLoading(false);
             if (componentMounted) {
-              
-              
                 console.log(filters)
                 console.log(data)
             }
@@ -50,11 +48,6 @@ const HomeProducts = () => {
                 <Skeleton />
             </>
         )
-    }
-    
-    const filterProducts = (cat) => {
-        const updataData = data.filter((x) => x.category === cat);
-        setFilter(updataData);
     }
 
     const ShowProducts = () => {
