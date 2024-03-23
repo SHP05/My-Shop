@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "./product.css";
-import Footer from "../Footer/Footer";
 import ProductSearch from "./Filter";
-import Navbar from "../Navbar/NavbarNew/NavbarResp";
+import Footer from "../../component/Footer/Footer";
+import Navbar from "../../component/Navbar/NavbarNew/NavbarResp";
 
 const Products = () => {
     const [data, setData] = useState([]);
     const [filters, setFilter] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [query, setQuery] = useState("");
 
     useEffect(() => {
         const getProducts = async () => {
@@ -28,16 +27,6 @@ const Products = () => {
         const updatedData = data.filter((item) => item.category === cat);
         setFilter(updatedData);
     }
-
-    const handleSearch = () => {
-  
-        const filteredProducts = data.filter(
-            (product) =>
-                product.title.toLowerCase().includes(query.toLowerCase()) ||
-                product.category.toLowerCase().includes(query.toLowerCase())
-        );
-        setFilter(filteredProducts);
-    };
 
     const Loading = () => {
         return (
@@ -76,7 +65,6 @@ const Products = () => {
                         <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>MacBook</button>
                         <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Laptop</button>
                         <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>Pendrive</button>
-                        <button className="button-28 me-2 mx-4 my-2" onClick={() => filterProducts("electronics")}>School Bag</button>
                     </div>
                     <ProductSearch products={filters} />
                 </div>

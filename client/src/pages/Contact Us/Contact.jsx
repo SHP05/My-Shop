@@ -1,6 +1,6 @@
 import React from "react"
-import Navbar from "../Navbar/NavbarNew/NavbarResp";
-import Footer from "../Footer/Footer";
+import Navbar from "../../component/Navbar/NavbarNew/NavbarResp";
+import Footer from "../../component/Footer/Footer";
 
 const Contact = ()=>{
     return(

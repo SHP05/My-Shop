@@ -1,5 +1,5 @@
 var nodemailer = require('nodemailer');
-
+const { NODEMAILER_PSW ,  NODEMAILER_MAIL} = process.env;
 const SendMailOnOrder =  (req, res) => {
   let email = req.body.email;
   let message = req.body.total;
@@ -10,8 +10,8 @@ const SendMailOnOrder =  (req, res) => {
     host: 'smtp.gmail.com',
     port: 587,
     auth: {
-      user: 'shyam.pankhaniya5@gmail.com',
-      pass: 'jhvgwlxhxezvhbol'    //ubvphiizcurlfxvg
+      user: NODEMAILER_MAIL,
+      pass: NODEMAILER_PSW    
     }
   })
 

@@ -1,56 +1,67 @@
-# MY SHOP Ecommerce WebApp
 
-Welcome to my Ecommerce WebApp repository! This project is a full-stack application built using React.js, Redux, Node.js, Express.js, and MongoDB. It features JWT Authentication, a complete purchase flow, adding items to the cart functionality using Redux, and sending emails with a bill upon placing an order.
+# MY SHOP - ECommerce WebApp
+Welcome to my Ecommerce WebApp repository! This project is a full-stack application built using React.js, Redux, Node.js, Express.js, and MongoDB. It features JWT Authentication, a complete purchase flow , adding items to the cart functionality using Redux, and sending emails with a bill upon placing an order and users can easily Download bill.
+
+<!-- [link text](url)
+
+![alt taxt](img url) -->
 
 ## Features
+- **User Authentication:** Users can create an account, log in, and log out securely.
+- **Add to Cart Functionality:** Users can add any Product to their cart while browsing the available options..
+- **Place Orders**: Once items are added to the cart, users can place orders securely.
+- **Filtering**: Users can filter any Product based on different catagory (Men's Cloths , Women's cloths) and easy to explore their detailed description.
+- **Search**: Users can search for specificproduct using the search functionality and explore their detailed description.
+- **Redux Integration**: Redux is used for state management, providing a seamless user experience.
 
-- **JWT Authentication**: Secure authentication using JSON Web Tokens.
-- **Complete Purchase Flow**: Seamless process for users to browse products, add them to the cart, and proceed with the purchase.
-- **Add to Cart Functionality**: Utilizes Redux for managing the cart state, allowing users to easily add items to their cart.
-- **Email Notification**: Sends a confirmation email with the bill upon successfully placing an order.
+## Modules
 
 ## Technologies Used
+- **Frontend**: <p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=js,react,redux,materialui,html,css" />
+  </a>
+</p>
 
-- **Frontend**:
-  - React.js: JavaScript library for building user interfaces.
-  - Redux: State management library for managing application state.
-  
-- **Backend**:
-  - Node.js: JavaScript runtime environment for server-side development.
-  - Express.js: Web application framework for Node.js, simplifying the creation of APIs.
-  - MongoDB: NoSQL database used for storing application data.
+- **Backend**: <p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nodejs,express" />
+  </a>
+</p>
+
+- **Database** : <p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=mongodb" />
+  </a>
+</p>
+
+- **Authentication**: JWT (JSON Web Tokens)
 
 ## Installation
+To run this project locally, follow these steps:
 
-1. Clone the repository:
+1. **Clone the Repository**
+       
+        git clone https://github.com/SHP05/My-Shop.git
 
-   ```bash
-   git clone https://github.com/your-username/ecommerce-webapp.git
-2. Navigate to the project directory:
+2. **Install Dependencies**
+       
+        cd client
+        npm install
+        cd server
+        npm install
 
-   ```bash
-   cd ecommerce-webapp
-3. Install dependencies:
+3. **Setup your DB and SECRET KEY as per .env.example file in server**
 
-    ```bash
-    npm install
-    ```
-4. Set up environment variables:
+4. **Start the Server**:
+       
+        npm run dev
 
-    Create a .env file in the root directory.
-    Add necessary environment variables such as database connection URI, JWT secret, and email service credentials.
-6. Start the server:
+5. **Start the client**:
+       
+        npm start
 
-    ```bash
-    npm start
-
-7. Start the frontend:
-
-    ```bash
-    cd client
-    npm start
-    ```
-8. Visit http://localhost:3000 in your browser to view the application.
+6. **Open your browser and navigate to http://localhost:3000 to start exploring HungryUp.**
 
 ## Usage
   - Register or login to your account.
@@ -58,7 +69,7 @@ Welcome to my Ecommerce WebApp repository! This project is a full-stack applicat
   - Enter shipping details and complete the purchase.
   - Receive a confirmation email with the bill upon successful order placement.
 
-## Usage
+## contribute
 Contributions are welcome! Feel free to open an issue or submit a pull request. This project is now Under build so contribute and add your thoughts.
 
 Thank you for checking out my Ecommerce WebApp! If you have any questions or suggestions, feel free to contact me. Happy shopping!

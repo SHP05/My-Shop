@@ -8,7 +8,7 @@ import { addCart } from "../../redux/action";
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import Navbar from "../Navbar/NavbarNew/NavbarResp";
+import Navbar from "../../component/Navbar/NavbarNew/NavbarResp";
 
 const Cart = () => {
     const state1 = useSelector((state)=> state.handleCart)

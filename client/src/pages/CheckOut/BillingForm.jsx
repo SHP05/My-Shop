@@ -1,29 +1,15 @@
-import React from 'react'
-import "./checkout.css"
-import { useSelector } from 'react-redux'
-import Navbar from '../Navbar/NavbarNew/NavbarResp';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 import axios from 'axios';
+import html2canvas from "html2canvas"
+import jspdf from 'jspdf';
 
-const Checkout = () => {
-    const state = useSelector((state) => state.handleCart)
 
+const BillingForm = () =>{
     var total = 0;
-    const itemList = (item) => {
-        total = total + ((item.price) * item.qty);
-        return (
-            <li className="list-group-item d-flex justify-content-between lh-sm py-3">
-                <div>
-                    <h6 className="my-0">{item.title}</h6>
-                </div>
-                <span className="text-muted">${item.price}</span>
-            </li>
-        );
-    }
 
     //send mail through mail
-    state.map(itemList);
     const email = localStorage.getItem('email');
     const notify = () => toast.success('Your Payment Successfully Completed!', {
         position: "bottom-center",
@@ -45,35 +31,26 @@ const Checkout = () => {
         notify();
     }
 
-    return (
-        <>
-            <Navbar />
-            <main>
-                <div className="container my-5">
-                    <center><h2 className='mb-3'>Shipping Information</h2></center>
-                    <div className="d-flex flex-column-reverse justify-content-center">
-                        <div className="col-md-5 col-lg-8 order-md-last my-5 mx-5">
-                            <h4 className="d-flex justify-content-between align-items-center mb-3">
-                                <span className="text-primary">Your cart</span>
-                                <span className="badge bg-primary rounded-pill">{state.length}</span>
-                            </h4>
-                            <ul className="list-group mb-3">
-                                {state.map(itemList)}
+     //Download PDF
+     const [loader, setloader] = useState(false);
 
-                                <li className="list-group-item d-flex justify-content-between py-3">
-                                    <span>Total (USD)</span>
-                                    <strong>${total}</strong>
-                                </li>
-                            </ul>
-
-                            <form className="card p-2">
-                                <div className="input-group">
-                                    <input type="text" className="form-control" placeholder="Promo code" required />
-                                    <button type="submit" className="btn btn-secondary">Redeem</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="col-md-7 col-lg-8  mx-5">
+     const DownloadPDF = async () => {
+         const printdoc = document.querySelector('.Bill');
+         setloader(true);
+         await html2canvas(printdoc).then((canvas) => {
+             const img = canvas.toDataURL('img/png')
+             const doc = new jspdf('l', 'in', [2,6]);
+             const componentWidth = doc.internal.pageSize.getWidth();
+             const componentHeight = doc.internal.pageSize.getHeight();
+             doc.addImage(img, 'PNG', 0, 0, componentWidth, componentHeight);
+             setloader(false);
+             doc.save('MyShopBill.pdf');
+             console.log("pdf generated");
+         })
+     }
+return(
+    <>
+          <div className="col-md-7 col-lg-8  mx-5">
                             <h4 className="mb-3">Billing address</h4>
                             <form className="needs-validation">
                                 <div className="row g-3">
@@ -203,15 +180,22 @@ const Checkout = () => {
                                     Continue to checkout
                                 </button>
                             </form>
-                            <hr className="my-4" />
-
-                        </div>
+                            {/*Download Bill*/}
+                    <div className="mx-5">
+                            <button
+                                onClick={DownloadPDF}
+                                disabled={!(loader === false)}
+                                className="btn justify-content-center"
+                            >
+                                {loader ?
+                                    (<span>Downloading</span>)
+                                    : (<span><i class="fa fa-download"></i>Download Bill</span>)}
+                            </button>
                     </div>
-                </div>
-                <ToastContainer />
-            </main>
-        </>
-    )
+                    <hr className="my-4" />
+                        </div>
+    </>
+)
 }
 
-export default Checkout;
+export default BillingForm;

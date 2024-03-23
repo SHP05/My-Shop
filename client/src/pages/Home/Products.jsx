@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 import "../Product/product.css"
-import Footer from "../Footer/Footer";
+import Footer from "../../component/Footer/Footer";
 
 const HomeProducts = () => {
     const [data, setData] = useState([]);

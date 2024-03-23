@@ -3,16 +3,16 @@ import { useState , useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './component/Home/Home';
-import Products from './component/Product/Products';
-import Product from './component/Product/Product.jsx';
-import Cart from './component/Cart/Cart';
-import Checkout from './component/CheckOut/Checkout';
-import Contact from './component/Contact Us/Contact';
+import Home from './pages/Home/Home';
+import Products from './pages/Product/Products';
+import Product from './pages/Product/Product.jsx';
+import Cart from './pages/Cart/Cart';
+import Checkout from './pages/CheckOut/Checkout';
+import Contact from './pages/Contact Us/Contact';
 import Signup from './component/Authenticate/Register/Register';
 import LoginPg from './component/Authenticate/Login/Login';
 import Front from './component/Authenticate/FrontPage/Front';
-import NotFound from './component/404Error/NotFound';
+import NotFound from './pages/404Error/NotFound';
 import { useLocation } from 'react-router-dom';
 
 function App() {

@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 // import Notifications, {notify} from 'react-notify-toast';
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/NavbarNew/NavbarResp";
+import Footer from "../../component/Footer/Footer";
+import Navbar from "../../component/Navbar/NavbarNew/NavbarResp";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // https://fkhadra.github.io/react-toastify/introduction/
