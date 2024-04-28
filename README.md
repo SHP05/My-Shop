@@ -1,6 +1,6 @@
 ## Images of MY SHOP
 ![HomePage](./Images/1.png)
-![HomePage](./Images/1.2.png)
+![HomePage](./Images/2.1.png)
 ![HomePage](./Images/2.png)
 ![HomePage](./Images/3.png)
 ![HomePage](./Images/4.png)

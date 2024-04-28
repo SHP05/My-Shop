@@ -7,9 +7,10 @@ const Secret = process.env.SECRET;
 
 const Login = async (req, res) => {
   const { email, password } = req.body;
-  const userData = await CustomerModel.findOne({ email })
-    .then((user) => {
-      const ans = bcrypt.compare(password, user.password);
+  const user = await CustomerModel.findOne({ email });
+
+    if(user){
+      const ans = await bcrypt.compare(password, user.password);
       if (ans){
         const token = JWT.sign({ email: user, userId: user._id }, Secret, {
           expiresIn: "24h",
@@ -23,10 +24,10 @@ const Login = async (req, res) => {
       } else {
         return res.status(401).json({ message: "Invalid Credentials" });
       }
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+    }
+    else{
+      res.status(401).json({message:"Invalid Credentials"});
+    };
 };
 
 const SignUp = async (req, res) => {

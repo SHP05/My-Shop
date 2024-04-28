@@ -15,6 +15,7 @@ import Front from './component/Authenticate/FrontPage/Front';
 import NotFound from './pages/404Error/NotFound';
 import { useLocation } from 'react-router-dom';
 
+
 function App() {
   const [loading, setLoading] = useState(false);
   const { pathname } = useLocation();

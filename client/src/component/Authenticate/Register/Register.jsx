@@ -30,7 +30,7 @@ function Copyright(props) {
   );
 }
 
-const notify = () => toast.success("Your ID or Password is incorrect!",
+const notify = () => toast.warning("User already exist!",
   {
     position: "bottom-right",
     autoClose: 1000,
