@@ -1,0 +1,221 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+h4 {
+  font-family: lato;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.cardss-wrapper {
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards {
+  max-width: 290px;
+  height: 350px;
+  background: #ffffff;
+  margin: 25px auto;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.cards:hover{
+  box-shadow: 0px 0px 20px gray;
+}
+.cards .image-wrapper {
+  height: 70%;
+  width: 100%;
+  overflow: hidden;
+  transition: height 100ms ease-out;
+  transition: 0.5s;
+}
+.cards .image-wrapper:hover{
+  transform: scale(1.1);
+}
+.cards .image-wrapper img{
+  height: 400px;
+  width: 320px;
+}
+.cards .image-wrapper.shrink {
+  height: 40%;
+
+}
+.cards .content-wrapper {
+  padding: 15px;
+}
+.cards .content-wrapper .price {
+  margin: 10px 0;
+  font-weight: 300;
+}
+.cards .content-wrapper .description {
+  margin: 25px 0 0 0;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  display: none;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+.cards .content-wrapper .description.show {
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 1;
+}
+.cards .content-wrapper .actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  background: #fff;
+}
+.cards .content-wrapper .actions .button {
+  width: 48%;
+  margin: 0 1% 0 1%;
+  float: left;
+}
+
+.button {
+  padding: 5px 8px;
+  border: none;
+  background: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: all 100ms linear;
+}
+.button.flip {
+  perspective: 1000;
+}
+.button.flip.flipped {
+  transform: rotateX(180deg);
+}
+.button.flip.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.button.green-solid {
+  border-radius: 10px;
+  border: solid 2px  #c8d8e4;
+  color:#fff;
+  background:  #2b6777;
+}
+.button.green-solid:hover {
+  background: #c8d8e4;
+  color: #2b6777;
+  border: solid 2px #2b6777;
+}
+.button .backside {
+  display: none;
+}
+.button .backside.show {
+  display: inline-block;
+  transform: rotateX(180deg);
+}
+.button .front.hide {
+  display: none;
+}
+.button.black-simple {
+  border: solid 2px #10222b;
+}
+.button.black-simple:hover {
+  background: #10222b;
+  color: #fff;
+}
+.button.cart:before {
+  display: inline-block;
+  content: "";
+  font-family: fontawesome;
+  padding: 0 5px 0 0;
+}
+.button.cart.added:before {
+  content: "";
+  transform: rotateX(180deg);
+}
+.button.more:before {
+  content: "";
+  font-family: fontawesome;
+  padding: 0 10px 0 0;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .cards .image-wrapper {
+    height: 55%; 
+  }
+
+  .cards .content-wrapper .actions .button {
+    width: 100%;
+    float: none;
+    margin: 0 0 2% 0;
+  }
+}
+
+
+.offer_img img{
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* serch bar */
+.serch-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: #2b6777;
+}
+
+.serch-container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+#search-input{
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-bottom: 50px;
+}
+
+.serch-container .input:valid ~ .label,
+.serch-container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.serch-container .input:valid,
+.serch-container .input:focus {
+  box-shadow: 3px 3px 10px #2b6777,
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px #2b6777,
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+.prod-img{
+  border-radius: 15px;
+}
