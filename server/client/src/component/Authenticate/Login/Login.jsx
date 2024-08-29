@@ -34,7 +34,7 @@ function Copyright(props) {
 
 
 // https://fkhadra.github.io/react-toastify/introduction/
-const notify = () => toast.warning("Invalid Credentials!",
+const notify = () => toast.warning("Your ID or Password is incorrect!",
 {
     position: "bottom-right",
     autoClose: 1000,
@@ -66,7 +66,7 @@ const LoginPg = () => {
         event.preventDefault()
          await axios.post(`${window.location.origin}/login`, { email, password })
             .then(result => {
-                    console.log(result) //show login user data for test
+                console.log(result) //show login user data for test
                     localStorage.setItem("name", result.data.userData.name);
                     localStorage.setItem("email", result.data.userData.email)
                     console.log(result.data.token);
